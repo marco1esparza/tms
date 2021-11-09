@@ -109,17 +109,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page string="Extra Fields">
-                            <group col="4" colspan="4">
-                                <newline/>
-                                <field colspan="4" context="{'default_waybill_id': active_id, 'active_model_base': active_model}" name="waybill_extradata_ids" nolabel="1">
-                                    <tree string="Extra Fields">
-                                        <field name="type_id" string="Name" context="{'default_apply_on': 'waybill'}"/>
-                                        <field name="value_extra" string="Value"/>
-                                    </tree>
-                                </field>
-                            </group>
-                        </page>
+                        
                         <page string="Factor Supplier">
                             <separator colspan="4" string="Waybill Supplier Factors"/>
                             <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" context="{'default_category': 'supplier'}" name="supplier_factor_ids" nolabel="1"/>
