@@ -1,4 +1,3 @@
-# Copyright 2012, Israel Cruz Argil, Argil Consulting
 # Copyright 2016, Jarsa Sistemas, S.A. de C.V.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
@@ -191,7 +190,7 @@ class TmsTravel(models.Model):
 
     def action_progress(self):
         for rec in self:
-            rec.validate_driver_license()
+            #rec.validate_driver_license()
             rec.validate_vehicle_insurance()
             travels = rec.search(
                 [('state', '=', 'progress'), '|',
