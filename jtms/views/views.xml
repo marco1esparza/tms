@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="jtms.list">
+      <field name="name">jtms list</field>
+      <field name="model">jtms.jtms</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="jtms.action_window">
+      <field name="name">jtms window</field>
+      <field name="res_model">jtms.jtms</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="jtms.action_server">
+      <field name="name">jtms server</field>
+      <field name="model_id" ref="model_jtms_jtms"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="jtms" id="jtms.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="jtms.menu_1" parent="jtms.menu_root"/>
+    <menuitem name="Menu 2" id="jtms.menu_2" parent="jtms.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="jtms.menu_1_list" parent="jtms.menu_1"
+              action="jtms.action_window"/>
+    <menuitem name="Server to list" id="jtms" parent="jtms.menu_2"
+              action="jtms.action_server"/>
+-->
+  </data>
+</odoo>

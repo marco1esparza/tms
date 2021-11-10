@@ -13,7 +13,7 @@
     <menuitem 
         id="menu_tms_reports" 
         name="Reports" 
-        parent="menu_tms_travels" sequence="80"/>
+        parent="menu_tms_travels" sequence="20"/>
     <menuitem 
         id="menu_tms_tollstation" 
         name="Tollstation import" 
