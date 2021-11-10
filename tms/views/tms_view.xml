@@ -26,7 +26,8 @@
         sequence="99"/>
     <menuitem 
         id="menu_tms_settings_unit" 
-        name="Units" parent="menu_tms_travels" 
+        name="Units" 
+        parent="menu_tms_travels" 
         sequence="30"/>
     <menuitem 
         id="menu_tms_settings_routes" 
