@@ -43,8 +43,8 @@ class TmsTravel(models.Model):
         string='Route Distance (mi./km)')
     fuel_efficiency_expected = fields.Float(
         compute="_compute_fuel_efficiency_expected")
-    kit_id = fields.Many2one(
-        'tms.unit.kit')
+    """kit_id = fields.Many2one(
+        'tms.unit.kit')"""
     unit_id = fields.Many2one(
         'fleet.vehicle',
         required=True)
@@ -164,13 +164,13 @@ class TmsTravel(models.Model):
                     ) / 60 / 60
             rec.travel_duration_real = travel_duration_real
 
-    @api.onchange('kit_id')
+    """@api.onchange('kit_id')
     def _onchange_kit(self):
         self.unit_id = self.kit_id.unit_id.id
         self.trailer2_id = self.kit_id.trailer2_id.id
         self.trailer1_id = self.kit_id.trailer1_id.id
         self.dolly_id = self.kit_id.dolly_id.id
-        self.employee_id = self.kit_id.employee_id.id
+        self.employee_id = self.kit_id.employee_id.id"""
 
     @api.onchange('route_id')
     def _onchange_route(self):
