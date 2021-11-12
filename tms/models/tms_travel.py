@@ -231,16 +231,17 @@ class TmsTravel(models.Model):
                       'attached to this travel'))
             rec.state = "cancel"
 
-    @api.model
-    def create(self, values):
-        travel = super().create(values)
-        if not travel.operating_unit_id.travel_sequence_id:
-            raise ValidationError(
-                _('You need to define the sequence for travels in base %s')
-                % travel.operating_unit_id.name)
-        sequence = travel.operating_unit_id.travel_sequence_id
-        travel.name = sequence.next_by_id()
-        return travel
+    #@api.model
+    #def create(self, values):
+        
+    #    travel = super().create(values)
+    #    if not travel.operating_unit_id.travel_sequence_id:
+    #        raise ValidationError(
+    #            _('You need to define the sequence for travels in base %s')
+    #            % travel.operating_unit_id.name)
+    #    sequence = travel.operating_unit_id.travel_sequence_id
+    #    travel.name = sequence.next_by_id()
+    #    return travel
 
     @api.depends()
     def _compute_is_available(self):

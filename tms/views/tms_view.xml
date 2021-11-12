@@ -18,7 +18,7 @@
         id="menu_tms_tollstation" 
         name="Tollstation import" 
         parent="menu_tms" 
-        sequence="20"/>
+        sequence="10"/>
     <menuitem 
         id="menu_tms_settings" 
         name="Configuration" 
@@ -27,7 +27,7 @@
     <menuitem 
         id="menu_tms_settings_unit" 
         name="Units" 
-        parent="menu_tms_travels" 
+        parent="menu_tms" 
         sequence="30"/>
     <menuitem 
         id="menu_tms_settings_routes" 
