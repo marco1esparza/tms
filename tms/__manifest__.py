@@ -52,7 +52,6 @@
         'views/fleet_vehicle_engine_view.xml',
         'views/tms_route_note_view.xml',
         'data/product_product_data.xml',
-        'data/operating_unit.xml',
         'wizards/account_payment_register_view.xml',
         'wizards/tms_wizard_invoice_view.xml',
         'report/travel_instructions_letter.xml',

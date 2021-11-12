@@ -32,7 +32,7 @@
                 <filter name="date" context="{'group_by' : 'date'}" string="Date"/>
                 <filter context="{'group_by' : 'date_start_real'}" name="date_dispatched" string="Day Dispatched"/>
                 <filter name="day_finished" context="{'group_by' : 'date_end_real'}" string="Day Finished"/>
-                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+                <!--filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/-->
             </search>
         </field>
     </record>
@@ -250,7 +250,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="operating_unit_id" attrs="{'readonly':[('state','in',('progress','done', 'closed'))]}"/>
+                            <!--field name="operating_unit_id" attrs="{'readonly':[('state','in',('progress','done', 'closed'))]}"/-->
                             <!--field name="kit_id" attrs="{'readonly':[('state','in',('progress','done','closed'))]}"/-->
                             <field name="unit_id" attrs="{'readonly':[('state','in',('progress','done', 'closed'))]}" domain="[('fleet_type', '=', 'tractor')]"/>
                             <field name="trailer1_id" attrs="{'required':['|', ('dolly_id','!=',False),('trailer2_id','!=',False)], 'readonly':[('state','in',('progress','done', 'closed'))]}" context="{'default_fleet_type': 'trailer'}" domain="[('fleet_type', '=', 'trailer'),('id','!=',trailer2_id)]"/>
