@@ -18,8 +18,8 @@ class TmsExpense(models.Model):
     _order = 'name desc'
 
     name = fields.Char(readonly=True)
-    operating_unit_id = fields.Many2one(
-        'operating.unit', required=True)
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit', required=True)
     employee_id = fields.Many2one(
         'hr.employee', 'Driver', required=True,)
     travel_ids = fields.Many2many(
@@ -443,13 +443,13 @@ class TmsExpense(models.Model):
         for rec in self:
             rec.distance_real = sum(rec.travel_ids.mapped('distance_driver'))
 
-    @api.model
-    def create(self, values):
-        operating_unit = self.env['operating.unit'].browse(
-            values.get('operating_unit_id'))
-        sequence = operating_unit.expense_sequence_id
-        values['name'] = sequence.next_by_id()
-        return super().create(values)
+   # @api.model
+    #def create(self, values):
+        #operating_unit = self.env['operating.unit'].browse(
+         #   values.get('operating_unit_id'))
+      #  sequence = operating_unit.expense_sequence_id
+       # values['name'] = sequence.next_by_id()
+        #return super().create(values)
 
     def write(self, values):
         for rec in self:

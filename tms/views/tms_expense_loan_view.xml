@@ -38,7 +38,7 @@
             </h1>
             <group col="2">
                 <group>
-                    <field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/>
+                    <!--field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/-->
                     <field name="employee_id"
                         context="{'default_category': 'driver'}" 
                         domain="[('driver','=', True)]"

@@ -12,8 +12,8 @@ class TmsAdvance(models.Model):
     _description = 'Money advance payments for Travel expenses'
     _order = "name desc, date desc"
 
-    operating_unit_id = fields.Many2one(
-        'operating.unit', string='Operating Unit', required=True)
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit', string='Operating Unit', required=True)
     name = fields.Char(string='Advance Number')
     state = fields.Selection(
         [('draft', 'Draft'),
@@ -77,19 +77,19 @@ class TmsAdvance(models.Model):
         'res.company', required=True,
         default=lambda self: self.env.user.company_id)
 
-    @api.model
-    def create(self, values):
-        res = super().create(values)
-        if not res.operating_unit_id.advance_sequence_id:
-            raise ValidationError(
-                _('The sequence is not defined in operating unit %s') % (
-                    res.operating_unit_id.name))
-        if res.amount <= 0:
-            raise ValidationError(
-                _('The amount must be greater than zero.'))
-        sequence = res.operating_unit_id.advance_sequence_id
-        res.name = sequence.next_by_id()
-        return res
+    #@api.model
+    #def create(self, values):
+     #   res = super().create(values)
+      #  if not res.operating_unit_id.advance_sequence_id:
+       #     raise ValidationError(
+        #        _('The sequence is not defined in operating unit %s') % (
+         #           res.operating_unit_id.name))
+        #if res.amount <= 0:
+         #   raise ValidationError(
+          #      _('The amount must be greater than zero.'))
+        #sequence = res.operating_unit_id.advance_sequence_id
+        #res.name = sequence.next_by_id()
+        #return res
 
     @api.onchange('travel_id')
     def _onchange_travel_id(self):

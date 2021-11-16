@@ -49,8 +49,8 @@ class FleetVehicleLogFuel(models.Model):
     payment_state = fields.Selection(
         related="invoice_id.payment_state",
     )
-    operating_unit_id = fields.Many2one(
-        'operating.unit', string='Operating Unit')
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit', string='Operating Unit')
     notes = fields.Char()
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -82,22 +82,22 @@ class FleetVehicleLogFuel(models.Model):
         'res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)
 
-    @api.depends('vendor_id')
-    def _compute_prepaid(self):
-        obj_prepaid = self.env['fleet.vehicle.log.fuel.prepaid']
-        for rec in self:
-            prepaid_id = obj_prepaid.search([
-                ('operating_unit_id', '=', rec.operating_unit_id.id),
-                ('vendor_id', '=', rec.vendor_id.id),
-                ('state', '=', 'confirmed')], limit=1, order="date")
-            if prepaid_id:
-                if prepaid_id.balance > rec.price_total:
-                    rec.prepaid_id = prepaid_id.id
-                else:
-                    # TODO Remove raise
-                    raise ValidationError(
-                        _('Insufficient amount'))
-            rec.prepaid_id = False
+    #@api.depends('vendor_id')
+    #def _compute_prepaid(self):
+     #   obj_prepaid = self.env['fleet.vehicle.log.fuel.prepaid']
+      #  for rec in self:
+       #     prepaid_id = obj_prepaid.search([
+        #        ('operating_unit_id', '=', rec.operating_unit_id.id),
+         #       ('vendor_id', '=', rec.vendor_id.id),
+          #      ('state', '=', 'confirmed')], limit=1, order="date")
+          #  if prepaid_id:
+     #           if prepaid_id.balance > rec.price_total:
+      #              rec.prepaid_id = prepaid_id.id
+       #         else:
+        #            # TODO Remove raise
+         #           raise ValidationError(
+          #              _('Insufficient amount'))
+          #  rec.prepaid_id = False
 
     @api.depends('tax_amount')
     def _compute_price_subtotal(self):
@@ -140,16 +140,16 @@ class FleetVehicleLogFuel(models.Model):
                       'Voucher is already linked to a Travel Expense'))
             rec.state = 'cancel'
 
-    @api.model
-    def create(self, values):
-        res = super().create(values)
-        if not res.operating_unit_id.fuel_log_sequence_id:
-            raise ValidationError(
-                _('You need to define the sequence for fuel logs in base %s') %
-                res.operating_unit_id.name)
-        sequence = res.operating_unit_id.fuel_log_sequence_id
-        res.name = sequence.next_by_id()
-        return res
+    #@api.model
+    #def create(self, values):
+    #    res = super().create(values)
+     #   if not res.operating_unit_id.fuel_log_sequence_id:
+      #      raise ValidationError(
+       #         _('You need to define the sequence for fuel logs in base %s') %
+         #       res.operating_unit_id.name)
+        #sequence = res.operating_unit_id.fuel_log_sequence_id
+       # res.name = sequence.next_by_id()
+        #return res
 
     def set_2_draft(self):
         for rec in self:

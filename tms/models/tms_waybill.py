@@ -21,8 +21,8 @@ class TmsWaybill(models.Model):
     _description = 'Waybills'
     _order = 'name desc'
 
-    operating_unit_id = fields.Many2one(
-        'operating.unit', required=True)
+    #operating_unit_id = fields.Many2one(
+      #  'operating.unit', required=True)
     customer_factor_ids = fields.One2many(
         'tms.factor', 'waybill_id',
         string='Waybill Customer Charge Factors',

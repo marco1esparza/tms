@@ -11,8 +11,8 @@ class TmsExpenseLoan(models.Model):
     _inherit = 'mail.thread'
     _description = "Tms Expense Loan"
 
-    operating_unit_id = fields.Many2one(
-        'operating.unit', string='Operating Unit', required=True)
+    #operating_unit_id = fields.Many2one(
+      #  'operating.unit', string='Operating Unit', required=True)
     name = fields.Char()
     date = fields.Date(
         required=True,

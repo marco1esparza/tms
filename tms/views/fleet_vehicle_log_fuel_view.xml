@@ -21,9 +21,9 @@
                     </div>
                     <group>
                         <group>
-                            <field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/>
+                            <!--field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/-->
                             <field name="vendor_id" domain="[('is_company', '=', True)]" widget="res_partner_many2one" context="{'res_partner_search_mode': 'supplier', 'show_vat': True, 'default_is_company': True}" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
-                            <field name="travel_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" domain="[('state','!=','cancel'),('state','!=','closed'),('operating_unit_id', '=', operating_unit_id)]"/>
+                            <!--field name="travel_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" domain="[('state','!=','cancel'),('state','!=','closed'),('operating_unit_id', '=', operating_unit_id)]"/-->
                             <field name="vehicle_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
                         </group>
                         <group>
@@ -84,7 +84,7 @@
                 <field name="employee_id"/>
                 <field name="travel_id"/>
                 <field name="vehicle_id"/>
-                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+                <!--filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/-->
                 <filter name="vendor_id_group_by" context="{'group_by':'vendor_id'}" string="Supplier"/>
                 <filter name="vehicle_id_group_by" context="{'group_by':'vehicle_id'}" string="Vehicle"/>
                 <filter name="driver_id_group_by" context="{'group_by':'employee_id'}" string="Driver"/>

@@ -10,8 +10,8 @@ from odoo import api, fields, models
 class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
-    operating_unit_id = fields.Many2one(
-        'operating.unit', string='Operating Unit')
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit', string='Operating Unit')
     registration = fields.Char()
     fleet_type = fields.Selection(
         [('tractor', 'Motorized Unit'),

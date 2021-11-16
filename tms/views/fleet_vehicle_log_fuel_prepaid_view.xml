@@ -35,7 +35,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="operating_unit_id" required="1"/>
+                            <!--field name="operating_unit_id" required="1"/-->
                             <field domain="[('is_company', '=', True)]" name="vendor_id" required="1" widget="res_partner_many2one" context="{'res_partner_search_mode': 'supplier', 'show_address': 1, 'default_is_company': True, 'show_vat': True}"/>
                         </group>
                         <group>
@@ -60,7 +60,7 @@
                                         <field name="date"/>
                                         <field name="name"/>
                                         <field name="vendor_id"/>
-                                        <field name="operating_unit_id"/>
+                                        <!--field name="operating_unit_id"/-->
                                         <field name="travel_id"/>
                                         <field name="product_qty"/>
                                         <field name="price_total"/>

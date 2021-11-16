@@ -26,8 +26,8 @@ class HrEmployee(models.Model):
         'account.account', 'Loan Account', company_dependent=True)
     tms_expense_negative_account_id = fields.Many2one(
         'account.account', 'Negative Balance Account', company_dependent=True)
-    operating_unit_id = fields.Many2one(
-        'operating.unit', 'Operating Unit')
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit', 'Operating Unit')
     driver_license = fields.Char(string="License ID")
     license_type = fields.Char()
     days_to_expire = fields.Integer(compute='_compute_days_to_expire')

@@ -9,7 +9,7 @@ from . import fleet_vehicle_log_fuel
 from . import fleet_vehicle_log_fuel_prepaid
 from . import fleet_vehicle_odometer
 from . import hr_employee
-from . import operating_unit
+#from . import operating_unit
 from . import product_template
 from . import tms_advance
 from . import tms_event

@@ -15,8 +15,8 @@ class FleetVehicleLogFuelPrepaid(models.Model):
         'account.move', string='Invoice', readonly=True)
     invoice_paid = fields.Boolean(
         compute='_compute_invoiced_paid')
-    operating_unit_id = fields.Many2one(
-        'operating.unit')
+    #operating_unit_id = fields.Many2one(
+     #   'operating.unit')
     notes = fields.Char()
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -43,16 +43,16 @@ class FleetVehicleLogFuelPrepaid(models.Model):
     )
     balance = fields.Float(readonly=True, compute="_compute_balance")
 
-    @api.model
-    def create(self, values):
-        res = super().create(values)
-        if not res.operating_unit_id.prepaid_fuel_sequence_id:
-            raise ValidationError(
-                _('You need to define the sequence for fuel logs in base %s')
-                % res.operating_unit_id.name)
-        sequence = res.operating_unit_id.prepaid_fuel_sequence_id
-        res.name = sequence.next_by_id()
-        return res
+    #@api.model
+    #def create(self, values):
+     #   res = super().create(values)
+      #  if not res.operating_unit_id.prepaid_fuel_sequence_id:
+       #     raise ValidationError(
+        #        _('You need to define the sequence for fuel logs in base %s')
+         #       % res.operating_unit_id.name)
+        #sequence = res.operating_unit_id.prepaid_fuel_sequence_id
+        #res.name = sequence.next_by_id()
+        #return res
 
     @api.depends('log_fuel_ids')
     def _compute_balance(self):
@@ -83,7 +83,7 @@ class FleetVehicleLogFuelPrepaid(models.Model):
             raise ValidationError(_('The record is already invoiced'))
         obj_invoice = self.env['account.move']
         for rec in self:
-            journal_id = rec.operating_unit_id.purchase_journal_id.id
+            #journal_id = rec.operating_unit_id.purchase_journal_id.id
             fpos = rec.vendor_id.property_account_position_id
             account = rec.product_id.get_product_accounts(fpos)['expense']
             if not account['expense']:
@@ -92,7 +92,7 @@ class FleetVehicleLogFuelPrepaid(models.Model):
                       'product or its category.'))
             invoice_id = obj_invoice.create({
                 'partner_id': rec.vendor_id.id,
-                'operating_unit_id': rec.operating_unit_id.id,
+             #   'operating_unit_id': rec.operating_unit_id.id,
                 'fiscal_position_id': fpos.id,
                 'journal_id': journal_id,
                 'currency_id': rec.currency_id.id,

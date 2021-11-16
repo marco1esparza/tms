@@ -4,7 +4,7 @@
         <field name="name">Fernando Bedoya</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -15,7 +15,7 @@
         <field name="name">Jose Almendrariz</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -26,7 +26,7 @@
         <field name="name">Ricardo Bocanegra</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -37,7 +37,7 @@
         <field name="name">Jhon Hawk</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -48,7 +48,7 @@
         <field name="name">Jonathan Tomlinson</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -59,7 +59,7 @@
         <field name="name">Fernando Hernandez</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
@@ -70,7 +70,7 @@
         <field name="name">Luis Esparza</field>
         <field name="address_id" ref="base.main_partner"/>
         <field name="driver" eval="True"/>
-        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <!--field name="operating_unit_id" ref="operating_unit.main_operating_unit"/-->
         <field name="driver_license">QROO002722</field>
         <field name="days_to_expire">365</field>
         <field name="license_type">A</field>
